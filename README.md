@@ -1,5 +1,6 @@
 # 🗂Airbnb clone  
-<br><br>
+  
+  
 ### 0~1 Chap  
 **🔹1-1. pipenv를 사용해야 하는 이유**  
 `pip install django==3.0` 같이 pip를 이용한 django 설치는 PC 안에 Globally하게 설치되므로 서로 다른 버전의 django 프로젝트를 실행시킬 수가 없다.  
@@ -12,10 +13,10 @@ pipenv --three  # python 3.0 version을 사용할 수 있는 가상환경 생성
 pipenv shell  # 가상환경 안으로 들어가게 해주는 명령어 (vscode)
 ```
 **❗항상 버블 안에(가상환경 안에) 있을 것❗**  
-
-<br>
+  
 ---
-<br><br>
+  
+  
 ### 2 Chap  
 **🔹2-1. django project를 시작하는 좋은 방법**  
 django-admin startproject mysite 방식은 매우 간편하므로 초심자에게는 좋지만,  
@@ -30,5 +31,5 @@ Formatter : 코드를 더 보기 좋게 자동으로 수정해주는 확장 프�
 **🔹2-3. Pipfile 안의 packages and dev-packages**  
 pipfile안의 [packages] : 웹 애플리케이션이 동작할 때 필요한 패키지  
 pipfile안의 [dev-packages] : 개발자가 개발할 때만 필요한 패키지  
+  
 
-<br><br>
