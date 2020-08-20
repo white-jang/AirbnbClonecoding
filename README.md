@@ -14,7 +14,7 @@ pipenv shell  # 가상환경 안으로 들어가게 해주는 명령어 (vscode)
 **❗항상 버블 안에(가상환경 안에) 있을 것❗**  
 
 <br>
----
+<hr>
 <br><br>
 ### 2 Chap
 **🔹2-1. django project를 시작하는 좋은 방법**  
