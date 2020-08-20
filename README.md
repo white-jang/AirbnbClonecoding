@@ -7,8 +7,10 @@ pip install django==3.0 같이 pip를 이용한 django 설치는 PC 안에 Globa
 pipenv는 윈도우 환경의 파이썬 패키지 관리자로 Bubble 같은 가상 환경 안에 django를 설치한다.  
   
 **🔹1-2. pipenv를 실행하는 명령어**  
-`pipenv --three  # python 3.0 version을 사용할 수 있는 가상환경 생성 (cmd)`  
-`pipenv shell  # 가상환경 안으로 들어가게 해주는 명령어 (vscode)`  
+```
+pipenv --three  # python 3.0 version을 사용할 수 있는 가상환경 생성 (cmd)  
+pipenv shell  # 가상환경 안으로 들어가게 해주는 명령어 (vscode)
+```
 **❗항상 버블 안에(가상환경 안에) 있을 것❗**  
 
 <br><br>
@@ -19,7 +21,7 @@ pipenv는 윈도우 환경의 파이썬 패키지 관리자로 Bubble 같은 가
 django-admin startproject mysite 방식은 매우 간편하므로 초심자에게는 좋지만,  
 실제의 장고 어플리케이션을 다루기엔 좋은 방식이 아니다.  
 이 구조화 방식은 어플리케이션이 커지거나 여러 개발자와 협업할 때 좋지 않기 때문이다.  
-강의에서 추천하는 방식은 현재 django 버전에서는 *django-admin startproject mysite .* 명령어로 대체 가능하다.
+강의에서 추천하는 방식은 현재 django 버전에서는 `django-admin startproject mysite .` 명령어로 대체 가능하다.
 
 **🔹2-2. Linter and Fomatter**  
 Linter : 컴파일이 없는 Runtime 언어인 파이썬의 오류를 코드 실행 전에 감지하기 위해 오류가 생길 부분을 알려주는 확장 프로그램. 파이썬에서 널리 써이는 관습도 준수할 수 있게 도와준다. 강의에서는 *flake8*을 사용했다.  
