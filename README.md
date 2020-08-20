@@ -7,9 +7,6 @@ pip install django==3.0 같이 pip를 이용한 django 설치는 PC 안에 Globa
 pipenv는 윈도우 환경의 파이썬 패키지 관리자로 Bubble 같은 가상 환경 안에 django를 설치한다.  
   
 **1-2 pipenv를 실행하는 명령어**  
-pipenv --three : python 3.0 version을 사용할 수 있는 가상환경 생성 *cmd*  
-pipenv shell : 가상환경 안으로 들어가게 해주는 명령어 *vscode*  
-*항상 Bubble 안에(가상환경 안에) 있을 것!*  
 <br><br>
 ---
 <br><br>
