@@ -22,14 +22,35 @@ pipenv shell  # 가상환경 안으로 들어가게 해주는 명령어 (vscode)
 django-admin startproject mysite 방식은 매우 간편하므로 초심자에게는 좋지만,  
 실제의 장고 어플리케이션을 다루기엔 좋은 방식이 아니다.  
 이 구조화 방식은 어플리케이션이 커지거나 여러 개발자와 협업할 때 좋지 않기 때문이다.  
-강의에서 추천하는 방식은 현재 django 버전에서는 `django-admin startproject mysite .` 명령어로 대체 가능하다.
-
+강의에서 추천하는 방식은 현재 django 버전에서는 `django-admin startproject mysite .` 명령어로 대체 가능하다.  
+  
 **🔹2-2. Linter and Fomatter**  
-Linter : 컴파일이 없는 Runtime 언어인 파이썬의 오류를 코드 실행 전에 감지하기 위해 오류가 생길 부분을 알려주는 확장 프로그램. 파이썬에서 널리 써이는 관습도 준수할 수 있게 도와준다. 강의에서는 *flake8*을 사용했다.  
-Formatter : 코드를 더 보기 좋게 자동으로 수정해주는 확장 프로그램. 강의에서는 *black*을 사용했다.
-
+- Linter  
+    - 컴파일이 없는 Runtime 언어인 파이썬의 오류를 코드 실행 전에 감지하기 위해 오류가 생길 부분을 알려주는 확장 프로그램. 
+    - 파이썬에서 널리 써이는 관습도 준수할 수 있게 도와준다.  
+    - 강의에서는 *flake8*을 사용했다.  
+- Formatter  
+    - 코드를 더 보기 좋게 자동으로 수정해주는 확장 프로그램.  
+    - 강의에서는 *black*을 사용했다.  
+  
 **🔹2-3. Pipfile 안의 packages and dev-packages**  
 pipfile안의 [packages] : 웹 애플리케이션이 동작할 때 필요한 패키지  
 pipfile안의 [dev-packages] : 개발자가 개발할 때만 필요한 패키지  
   
-
+**🔹2-4. django 기본 제공 파일**  
+\__init__.py : 장고 관련된 파일 X 파이썬에게 필요한 파일.  
+settings.py : 장고에서 기본으로 제공하는 설정이 들어간 파일. *템플릿 엔진, 패스워드 검사기, 등등...*  
+  
+**🔹2-5. Database의 종류**  
+- SQLite3  
+    - 테스트를 할 때나 소규모 프로젝트에서 많이 사용되는 데이터베이스.  
+    - 특별하게 어떤 프로그램을 설치하지 않아도 동작한다.  
+- PostgreSQL  
+    - SQLite보다 전문적이고 백업 기능이 존재한다.  
+  
+**🔹2-6. Django Project를 효과적으로 사용하려면?**  
+Application은 function의 조합이며 Project는 Application의 조합이다.  
+`Project > Applications > fucntions`  
+django project는 여러 **작은** 어플리케이션의 모음이며,  
+하나의 기능을 만들 때 너무 많은 동작(function)이 하나의 어플리케이션 안에 있으면 안 된다.  
+항상 작게 나누어서 정복하는 방식(Divide and Conquer)으로 어플리케이션을 설계해야 한다.  
