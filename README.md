@@ -19,7 +19,7 @@ pipenv shell  # 가상환경 안으로 들어가게 해주는 명령어 (vscode)
   
 ### 2 Chap  
 **🔹2-1. django project를 시작하는 좋은 방법**  
-django-admin startproject mysite 방식은 매우 간편하므로 초심자에게는 좋지만,  
+`django-admin startproject mysite` 방식은 매우 간편하므로 초심자에게는 좋지만,  
 실제의 장고 어플리케이션을 다루기엔 좋은 방식이 아니다.  
 이 구조화 방식은 어플리케이션이 커지거나 여러 개발자와 협업할 때 좋지 않기 때문이다.  
 강의에서 추천하는 방식은 현재 django 버전에서는 `django-admin startproject mysite .` 명령어로 대체 가능하다.  
@@ -54,3 +54,9 @@ Application은 function의 조합이며 Project는 Application의 조합이다.
 django project는 여러 **작은** 어플리케이션의 모음이며,  
 하나의 기능을 만들 때 너무 많은 동작(function)이 하나의 어플리케이션 안에 있으면 안 된다.  
 항상 작게 나누어서 정복하는 방식(Divide and Conquer)으로 어플리케이션을 설계해야 한다.  
+  
+**🔹2-7. 어플리케이션의 이름은?**  
+**❗어플리케이션의 이름은 항상 복수형으로 만들 것❗**  
+*ex) users, rooms, ...*  
+  
+  
