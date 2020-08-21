@@ -59,4 +59,20 @@ django project는 여러 **작은** 어플리케이션의 모음이며,
 **❗어플리케이션의 이름은 항상 복수형으로 만들 것❗**  
 *ex) users, rooms, ...*  
   
+---  
+  
+  
+### 3 Chap  
+**🔹3-1. User model 대체하기**  
+Django에서 기본적으로 제공하는 User 모델을 상속 받아 원하는 모델로 대체할 수 있다. *(Custom)*  
+settings.py에서 `AUTH_USER_MODEL = 'myapp.user'` 방식으로 값을 설정해주면 된다.  
+  
+**🔹3-2. model에 기존에 없던 필드를 추가할 때**  
+새로운 필드를 추가하기 전에 기존 model에 맞춰 생성된 값이 존재할 경우,  
+default 값을 정해주거나 혹은 null 허용으로 설정해주어야 오류가 발생되지 않는다.  
+새로운 필드가 추가됨으로써 기존 값에 생기는 빈 공간을 어떻게 채울 것인지 결정해주어야 하는 것이다.  
+```
+bio = models.TextField(default="")
+bio = models.TextField(null=True)
+```  
   
