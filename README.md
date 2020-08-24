@@ -75,4 +75,31 @@ default 값을 정해주거나 혹은 null 허용으로 설정해주어야 오�
 bio = models.TextField(default="")
 bio = models.TextField(null=True)
 ```  
+---  
+  
+  
+### 4 Chap
+**🔹4-1. 모든 어플리케이션이 재사용할 수 있는 기능은...**  
+새로운 어플리케이션으로 분류하여 다른 어플리케이션들이 상속받을 수 있게 한다. *ex) core App*  
+core App의 Model이 따로 DB에 저장되는 것을 원하지 않을 때는,  
+```
+class Meta: # 기타 사항을 적어줄 수 있는 클래스 속의 클래스
+    abstract = Ture
+```  
+위의 코드처럼 추상형(abstract)으로 변경해주면 된다.  
+  
+**🔹4-2. django-contries** 
+`pipenv install django-countries`로 django-countries 패키지를 설치하면,  
+choice로 모든 나라를 줄 수 있는 `CountryField()`를 사용할 수 있다.  
+  
+**🔹4-3. models.DateTimeField 활용법**  
+`created = models.DateTimeField(auto_now_add=True)`처럼 auto_now_add 값을 True로 설정해주면,  
+필드가 Model을 생성할 때*새롭게 Model에 맞는 값을 생성할 때?* 그 시간이 자동으로 저장된다.  
+`updated = models.DateTimeField(auto_now=True)`처럼 auto_now 값을 True로 설정해주면,  
+Model을 저장할 때*필드 값이 갱신될 때?*마다 계속해서 그 시간으로 자동으로 값을 변경해준다.  
+  
+- auto_now_add  
+    - model이 생성될 때 시간 기록  
+- auto_now  
+    - model의 값이 바뀔 때 시간 기록  
   
