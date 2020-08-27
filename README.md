@@ -107,7 +107,7 @@ Model을 저장할 때*필드 값이 갱신될 때?*마다 계속해서 그 시�
 **1:n 관계(일대다)**는 n에서 ForeignKey를 이용하여 1과의 관계를 나타낸다.  
 `host = models.ForeignKey(user_models.User, on_delete=models.CASCADE)`  
 **n:m 관계(다대다)**는 ManyToManyField를 이용하여 서로간의 관계를 나타낸다.  
-`room_type = models.ManyToManyField(RoomType, blank=True)`  
+`amenities = models.ManyToManyField(Amenity)`  
 관계형 DB에서의 관계들이 잘 설명되어 있는 블로그 주소 첨부↓  
 *https://victorydntmd.tistory.com/30*  
   
