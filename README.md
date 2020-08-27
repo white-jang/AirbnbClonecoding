@@ -84,7 +84,7 @@ bio = models.TextField(null=True)
 core App의 Model이 따로 DB에 저장되는 것을 원하지 않을 때는,  
 ```
 class Meta: # 기타 사항을 적어줄 수 있는 클래스 속의 클래스
-    abstract = Ture
+    abstract = True
 ```  
 위의 코드처럼 추상형(abstract)으로 변경해주면 된다.  
   
@@ -103,4 +103,28 @@ Model을 저장할 때*필드 값이 갱신될 때?*마다 계속해서 그 시�
 - auto_now  
     - model의 값이 바뀔 때 시간 기록  
   
+**🔹4-4. 1:n and n:m**  
+**1:n 관계(일대다)**는 n에서 ForeignKey를 이용하여 1과의 관계를 나타낸다.  
+`host = models.ForeignKey(user_models.User, on_delete=models.CASCADE)`  
+**n:m 관계(다대다)**는 ManyToManyField를 이용하여 서로간의 관계를 나타낸다.  
+`room_type = models.ManyToManyField(RoomType, blank=True)`  
+관계형 DB에서의 관계들이 잘 설명되어 있는 블로그 주소 첨부↓  
+*https://victorydntmd.tistory.com/30*  
+  
+**🔹4-5. ondelete의 종류**  
+**❗ondelete는 1:n 관계에서만 적용된다❗** 
+Room 모델이 ForeignKey로 User를 가지고 있을 때  
+- **CASCADE**
+    - User를 삭제하면 User의 Room도 삭제
+- **PROTECT**
+    - User의 Room을 삭제하기 전까지 User를 삭제할 수 없음
+- SET_NULL
+    - User가 삭제될 경우 User가 없는 Room으로 변경 (User와 연결되지 않음)
+- SET_DEFUALT
+    - User가 삭제될 경우 기본 설정값에 따라 Room의 User가 변경됨
+    - 예를 들어, SET_DEFAULT=admin일 경우 Room을 지우기 전에 User가 삭제된다면, admin으로 User값 변경
+- SET
+    - User가 삭제될 경우 원하는 함수를 실행시킬 수 있음 (함수 등록)
+- DO_NOTHING
+    - integrity error를 발생시킴
   
