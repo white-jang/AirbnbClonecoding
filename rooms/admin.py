@@ -13,7 +13,59 @@ class ItemAdmin(admin.ModelAdmin):
 class RoomAdmin(admin.ModelAdmin):
     """ Room Admin Definition """
 
-    pass
+    fieldsets = (
+        (
+            "Basic Info",
+            {"fields": ("name", "description", "country", "address", "price")},
+        ),
+        ("Times", {"fields": ("check_in", "check_out", "instant_book")}),
+        ("Spaces", {"fields": ("guests", "beds", "bedrooms", "baths")}),
+        (
+            "More About the Space",
+            {
+                "classes": ("collapse",),  # 접기 기능 추가
+                "fields": ("amenities", "facilites", "house_rules"),
+            },
+        ),
+        ("Last Details", {"fields": ("host",)}),
+    )
+
+    list_display = (
+        "name",
+        "country",
+        "city",
+        "price",
+        "guests",
+        "beds",
+        "bedrooms",
+        "baths",
+        "check_in",
+        "check_out",
+        "instant_book",
+    )
+
+    list_filter = (
+        "instant_book",
+        "host__superhost",
+        "room_type",
+        "amenities",
+        "facilites",
+        "house_rules",
+        "city",
+        "country",
+    )
+
+    search_fields = ("city", "^host__username")
+    # 해당 field를 기준으로 검색할 수 있게 해줌
+    # icontains한 설정으로 대소문자 구별 없이 검색 가능
+    # room 모델의 host 필드(User)가 가진 username으로도 검색 가능
+
+    filter_horizontal = (
+        "amenities",
+        "facilites",
+        "house_rules",
+    )
+    # ManyToMany 관계에서 사용할 수 있는 필터
 
 
 @admin.register(models.Photo)
