@@ -78,7 +78,7 @@ bio = models.TextField(null=True)
 ---  
   
   
-### 4 Chap
+### 4 Chap  
 **🔹4-1. 모든 어플리케이션이 재사용할 수 있는 기능은...**  
 새로운 어플리케이션으로 분류하여 다른 어플리케이션들이 상속받을 수 있게 한다. *ex) core App*  
 core App의 Model이 따로 DB에 저장되는 것을 원하지 않을 때는,  
@@ -128,3 +128,20 @@ Room 모델이 ForeignKey로 User를 가지고 있을 때
 - DO_NOTHING
     - integrity error를 발생시킴
   
+---  
+  
+### 6 Chap  
+**🔹6-1. amdin.py의 models.Modeladmin은?**  
+모델이 어드민 패널의 외부에서 보여지는 방식과 어드민 상세 페이지에서 보여주는 방식 두 가지를 변경한다.   
+
+**🔹6-2. admin.py의 search_fields**  
+`search_fields = ("city",)`  
+어드민 패널에서 원하는 필드 기준으로 value들을 검색할 수 있게 해준다.  
+옵션으로는...  
+- ^
+    - startswith (시작하는 단어 기준)
+- =
+    - iexact (정확히 일치하는 단어 기준, 대소문자 구분 없음)
+-
+- None (기본 설정)
+    - icontains (대소문자 구분 없이 단어의 포함 여부로 검색)
