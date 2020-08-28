@@ -112,7 +112,7 @@ Model을 저장할 때*필드 값이 갱신될 때?*마다 계속해서 그 시�
 *https://victorydntmd.tistory.com/30*  
   
 **🔹4-5. ondelete의 종류**  
-**❗ondelete는 1:n 관계에서만 적용된다❗** 
+**❗ondelete는 1:n 관계에서만 적용된다❗**  
 Room 모델이 ForeignKey로 User를 가지고 있을 때  
 - **CASCADE**
     - User를 삭제하면 User의 Room도 삭제
