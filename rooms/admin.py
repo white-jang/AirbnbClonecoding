@@ -30,6 +30,9 @@ class RoomAdmin(admin.ModelAdmin):
         ("Last Details", {"fields": ("host",)}),
     )
 
+    # ordering = ("name", "price")
+    # 설정한 필드를 기준으로 정렬 (1.name, 2.price)
+
     list_display = (
         "name",
         "country",
@@ -42,6 +45,7 @@ class RoomAdmin(admin.ModelAdmin):
         "check_in",
         "check_out",
         "instant_book",
+        "count_amenities",
     )
 
     list_filter = (
@@ -58,7 +62,7 @@ class RoomAdmin(admin.ModelAdmin):
     search_fields = ("city", "^host__username")
     # 해당 field를 기준으로 검색할 수 있게 해줌
     # icontains한 설정으로 대소문자 구별 없이 검색 가능
-    # room 모델의 host 필드(User)가 가진 username으로도 검색 가능
+    # room 모델의 host 필드(User)가 가진 username으로도 검색 가능 "__" 이용
 
     filter_horizontal = (
         "amenities",
@@ -66,6 +70,10 @@ class RoomAdmin(admin.ModelAdmin):
         "house_rules",
     )
     # ManyToMany 관계에서 사용할 수 있는 필터
+
+    def count_amenities(self, obj):
+        # obj는 row
+        return obj.amenities.count()
 
 
 @admin.register(models.Photo)
